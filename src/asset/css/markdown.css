@@ -1,0 +1,110 @@
+body{
+	font-size:100%;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl, table, blockquote, figure, code,pre {
+  margin: 0 auto;
+  width: 700px;
+}
+
+p, h1, h2 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+p {
+  color: rgb(77, 77, 77);
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 27px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl,blockquote {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: rgb(58, 58, 58);
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Sentinel";
+	text-align:center;
+	margin:1em auto;
+	padding-top:0.5em;
+}
+
+h2 {
+  color: rgb(0, 0, 0);
+  font-size: 19px;
+  font-weight: bold;
+}
+
+blockquote {
+  border-bottom-color: rgb(132, 89, 107);
+  border-left-color: rgb(132, 89, 107);
+  border-left-style: solid;
+  border-left-width: 8px;
+  border-right-color: rgb(132, 89, 107);
+  border-top-color: rgb(132, 89, 107);
+  font-size: 15px;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  color: #2f9ad8;
+  text-decoration: none;
+  font-weight:600;
+	font-size:0.9em;
+}
+
+hr {
+  color: rgb(244, 243, 243);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 0;
+  border-left-style: solid;
+  border-left-width: 0;
+  border-right-style: solid;
+  border-right-width: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-style: solid;
+  border-top-width: 5px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 430px;
+}
+
+ol, ul {
+  padding-left: 60px;
+}
+
+li {
+  font-size: 16px;
+  line-height: 25px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  text-align: left;
+  font-family:"Whitney";
+  font-weight:500;
+  color:#403E3D;
+}
+
+pre code {
+  padding: 10px 10px;
+  border: 0;
+}
+img {
+  vertical-align: bottom;
+}
+code{
+	font-family:"Menlo";
+	font-size:0.9em;
+	color:#988675;
+}
