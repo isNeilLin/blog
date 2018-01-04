@@ -16,13 +16,13 @@ class Client extends Component {
   render() {
     return (
       <Router>
-          <div>
+          <div >
             <Header/>
             <Switch>
-                <Route path='/' exact component={Home} />
-                <Route path='/archive' component={Archive} />
-                <Route path='/labels' component={Labels} />
-                <Route path='/about' component={About} />
+                <Route path='/' exact component={Home}/>
+                <Route path='/archive' component={Archive}/>
+                <Route path='/labels' component={Labels}/>
+                <Route path='/about' component={About}/>
                 <Route path="/article/:title" component={ArticleContent}/>
                 <Route component={NoMatch}/>
             </Switch>

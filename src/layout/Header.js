@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
-import { SearchInput } from '../styled-components/Style.js';
+import { SearchInput,Icon } from '../styled-components/Style.js';
 import {
   NavLink
 } from 'react-router-dom';
+import IconSrc from '../asset/icons/head.jpg';
 
 class Header extends Component {
     render(){
+        const IconStyle = {
+            width: '42px',
+            verticalAlign: 'middle',
+            padding: 0,
+            border: 'none'
+        }
         return (
         <div className="Header">
-            <div className="AuthorTitle">Neil</div>
+            <div className="AuthorTitle"><Icon src={IconSrc} style={IconStyle}/> Neil</div>
             <div className="Header-Tab">
                 <NavLink to="/" exact activeClassName="active">
                 <i className="TabIcon fas fa-home"></i>
