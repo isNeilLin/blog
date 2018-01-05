@@ -9,17 +9,23 @@ import ServerPage from './server';
 import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
+import { Provider } from 'mobx-react';
+import Store from './store';
+
+const store = new Store();
 
 class App extends Component {
     render() {
       return (
         <Router>
-          <div className="App">
-            <Switch>
-              <Route path='/admin' component={ServerPage} />
-              <Route path='/' component={ClientPage} />
-            </Switch>
-          </div>
+          <Provider store={store}>
+            <div className="App">
+              <Switch>
+                <Route path='/admin' component={ServerPage} />
+                <Route path='/' component={ClientPage} />
+              </Switch>
+            </div>
+          </Provider>
         </Router>
       );
     }

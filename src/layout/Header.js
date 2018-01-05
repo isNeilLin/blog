@@ -4,8 +4,37 @@ import {
   NavLink
 } from 'react-router-dom';
 import IconSrc from '../asset/icons/head.jpg';
+import { inject } from 'mobx-react';
 
+@inject('store')
 class Header extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            searchValue: ''
+        }
+    }
+
+    keyUp = (e)=>{
+        this.setState({
+            searchValue: e.target.value
+        })
+        if(e.keyCode===13){
+            return this.search();
+        }else if(!e.target.value){
+            return this.cancelSearch();
+        }
+    }
+
+    search = (e)=>{
+        const value = this.state.searchValue;
+        this.props.store.filterArticle(value);
+    }
+
+    cancelSearch = ()=>{
+        this.props.store.filterArticle();
+    }
+
     render(){
         const IconStyle = {
             width: '42px',
@@ -37,8 +66,8 @@ class Header extends Component {
                 关于</NavLink>
             </div>
             <div className="Search-Area">
-                <SearchInput type="text" placeholder="搜索..."/>
-                <i className="searchIcon fas fa-search"></i>
+                <SearchInput type="text" placeholder="搜索..." onKeyUp={this.keyUp}/>
+                <i className="searchIcon fas fa-search" onClick={this.search}></i>
             </div>
         </div>
         )
