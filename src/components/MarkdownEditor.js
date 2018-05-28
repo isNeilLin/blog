@@ -7,7 +7,9 @@ import {
 } from '../styled-components/Style';
 import marked, {Renderer} from 'marked';
 import highlightjs from 'highlightjs';
+import { inject } from 'mobx-react';
 
+@inject('store')
 class MyMarkdownEditor extends Component {
     constructor(props){
         super(props);
@@ -169,13 +171,17 @@ class MyMarkdownEditor extends Component {
         return {__html: html};
     }
     
-    handleTab = (e)=>{
+    keyUp = (e)=>{
         if(e.keyCode===9){
             e.preventDefault();
             this.editor.focus();
             document.execCommand('insertText',false,'    ');    
         }
+        this.props.store.changeCurArticle({
+            content: this.editor.innerText
+        })
     }
+
 
     render(){
         const style = {margin:'0 24px',padding:'0', flexGrow: 1};
@@ -186,7 +192,7 @@ class MyMarkdownEditor extends Component {
                     bindToolClick={this.bindToolClick}
                 ></Tool>
                 <MarkdownEditor contentEditable={true}
-                onKeyDown={this.handleTab}
+                onKeyUp={this.keyUp}
                 dangerouslySetInnerHTML={this.setHtml()}
                 innerRef={x=>{this.editor=x}}
                 onSelect={this.select}

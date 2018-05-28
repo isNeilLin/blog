@@ -44,7 +44,7 @@ class About extends Component {
         return (
             <ContentContainer>
                 <HeaderContainer>
-                    <Icon src={IconSrc} width="160px"></Icon>
+                    <Icon src={IconSrc} class="headIcon"></Icon>
                     <HeaderH1>Neil Lin</HeaderH1>
                     <HeaderP>.........</HeaderP>
                     <a href={this.state.github} target="_blank">

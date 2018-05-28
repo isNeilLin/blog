@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { media } from './media';
 
 export const SearchInput = styled.input`
     outline: none;
@@ -13,8 +14,14 @@ export const SearchInput = styled.input`
 
 export const Container = styled.div`
     width: 80%;
-    max-width: 1000px;
+    max-width: 80%;
     margin: 30px auto;
+    ${
+        media.phone`
+            width: 95%;
+            max-width: 95%;
+        `
+    }
 `;
 
 export const ArticleCard = styled.div`
@@ -29,6 +36,7 @@ export const ArticleCard = styled.div`
 `;
 
 export const ArticleTitle = styled.h2`
+    width: 100%;
     font-size: 24px;
     color: #333;
     margin: 16px 0;
@@ -73,9 +81,17 @@ export const ViewSource = styled.div.attrs({
 
 export const ContentContainer = styled.div`
     width: 800px;
+    max-width: 800px;
     margin: 24px auto;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
     padding: 24px 30px;
+    ${
+        media.phone`
+            width: 100%;
+            max-width: 100%;
+            padding: 24px 16px;
+        `
+    }
 `;
 
 export const ArticleText = styled.div`
@@ -149,6 +165,11 @@ export const Icon = styled.img`
 
 export const HeaderH1 = styled.h1`
     color: rgb(247,247,247);
+    ${
+        media.phone`
+            margin: 0;
+        `
+    }
 
 `;
 export const HeaderP = styled.p`

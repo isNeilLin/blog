@@ -5,7 +5,9 @@ import {
     AddLabel
 } from '../styled-components/Style';
 import Tag from './Tag';
+import { inject } from 'mobx-react';
 
+@inject('store')
 class SelectTags extends Component {
     constructor(props){
         super(props);
@@ -22,6 +24,9 @@ class SelectTags extends Component {
         this.setState({
             tags
         })
+        this.props.store.changeCurArticle({
+            labels: tags
+        })
     }
 
     addTag = (e)=>{
@@ -34,6 +39,9 @@ class SelectTags extends Component {
             e.target.value = '';
             this.setState({
                 tags
+            })
+            this.props.store.changeCurArticle({
+                labels: tags
             })
         }
     }

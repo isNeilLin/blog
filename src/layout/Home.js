@@ -8,6 +8,10 @@ class Home extends Component {
     constructor(props){
         super(props);
     }
+    componentDidMount(){
+        console.log(this.props.store)
+        console.log(this.props.store.articles)
+    }
     render(){
         let {articles} = this.props.store;
         return (

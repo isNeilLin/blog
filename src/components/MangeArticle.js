@@ -5,7 +5,9 @@ import {
     ArticlesItem
 } from '../styled-components/Style';
 import {Link} from 'react-router-dom';
+import { inject } from 'mobx-react';
 
+@inject('store')
 class MangeArticle extends Component {
     constructor(props){
         super(props);
@@ -39,7 +41,15 @@ class MangeArticle extends Component {
         }
     }
     render(){
+        console.log(this.props.store.articles)
         const articles = this.state.articles;
+        const a = {
+            title: 'test',
+            summary: 'testfasdfasfasd',
+            date: '2018-09-01',
+            content: 'fsadfasdfasdfsad',
+            labels: ['node']
+        }
         return (
             <FlexBlock style={{flexGrow:1}} direction="column">
                 <Filters></Filters>
